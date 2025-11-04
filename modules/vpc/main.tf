@@ -1,5 +1,5 @@
 # vpc creation
-resource "aws_vpc" "main" {
+resource "aws_vpc" "infra" {
     cidr_block = var.vpc_cidr
     instance_tenancy = "default"
     enable_dns_hostnames = true
@@ -11,7 +11,7 @@ resource "aws_vpc" "main" {
 
 # create igw and attach it to vpc
 resource "aws_internet_gateway" "igw" {
-    vpc_id = aws_vpc.main.id
+    vpc_id = aws_vpc.infra.id
 
     tags = {
         Name = "${var.project_name}-igw"
@@ -23,7 +23,7 @@ data "aws_availability_zones" "available_zones" {}
 
 # create public subnet az1
 resource "aws_subnet" "public_subnet_az1" {
-    vpc_id = aws_vpc.main.id 
+    vpc_id = aws_vpc.infra.id 
     cidr_block = var.public_subnet_az1_cidr
     availability_zone = data.aws_availability_zones.available_zones.names[0]
     map_public_ip_on_launch = true
@@ -36,7 +36,7 @@ resource "aws_subnet" "public_subnet_az1" {
 
 # create public subnet az2
 resource "aws_subnet" "public_subnet_az2" {
-    vpc_id = aws_vpc.main.id 
+    vpc_id = aws_vpc.infra.id 
     cidr_block = var.public_subnet_az2_cidr
     availability_zone = data.aws_availability_zones.available_zones.names[1]
     map_public_ip_on_launch = true 
@@ -50,7 +50,7 @@ resource "aws_subnet" "public_subnet_az2" {
 
 # create route table and add public route
 resource "aws_route_table" "public_route_table" {
-    vpc_id = aws_vpc.main.id 
+    vpc_id = aws_vpc.infra.id 
     route {
         cidr_block = "0.0.0.0/0"
         gateway_id = aws_internet_gateway.igw.id 
@@ -77,7 +77,7 @@ resource "aws_route_table_association" "public_subnet_az1_route_table_associatio
 
 # create private subnet az1
 resource "aws_subnet" "private_subnet_az1" {
-    vpc_id = aws_vpc.main.id 
+    vpc_id = aws_vpc.infra.id 
     cidr_block = var.private_subnet_az1_cidr
     availability_zone = data.aws_availability_zones.available_zones.names[0]
     map_public_ip_on_launch = false 
@@ -90,7 +90,7 @@ resource "aws_subnet" "private_subnet_az1" {
 
 # create private subnet az2
 resource "aws_subnet" "private_subnet_az2" {
-    vpc_id = aws_vpc.main.id 
+    vpc_id = aws_vpc.infra.id 
     cidr_block = var.private_subnet_az2_cidr
     availability_zone = data.aws_availability_zones.available_zones.names[1]
     map_public_ip_on_launch = false
@@ -102,7 +102,7 @@ resource "aws_subnet" "private_subnet_az2" {
 
 # create secure subnet az1
 resource "aws_subnet" "secure_subnet_az1" {
-    vpc_id = aws_vpc.main.id 
+    vpc_id = aws_vpc.infra.id 
     cidr_block = var.secure_subnet_az1_cidr
     availability_zone = data.aws_availability_zones.availability_zone.names[0]
     map_public_ip_on_launch = false 
@@ -114,7 +114,7 @@ resource "aws_subnet" "secure_subnet_az1" {
 
 # create secure subnet az2 
 resource "aws_subnet" "secure_subnet_az2" {
-    vpc_id = aws_vpc.main.id 
+    vpc_id = aws_vpc.infra.id 
     cidr_block = var.secure_subnet_az2_cidr
     availability_zone = data.aws_availability_zones.availability_zone.names[1]
     map_public_ip_on_launch = false 

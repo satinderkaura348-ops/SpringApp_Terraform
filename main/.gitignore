@@ -1,0 +1,3 @@
+statefile.tf
+terraform.tfvars
+userdata.sh

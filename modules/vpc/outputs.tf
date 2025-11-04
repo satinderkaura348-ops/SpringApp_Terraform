@@ -7,7 +7,7 @@ output "project_name" {
 }
 
 output "vpc_id" {
-    value = aws_vpc.main.id 
+    value = aws_vpc.infra.id 
 }
 
 output "public_subnet_az1_id" {
