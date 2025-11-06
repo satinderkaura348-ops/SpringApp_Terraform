@@ -18,7 +18,7 @@ resource "aws_launch_template" "ec2_asg" {
     name = "my_launch_template"
     image_id = data.aws_ami.amazon_linux_2.id 
     instance_type = "t2.micro"
-    iam_ec2_instance_profile {
+    iam_instance_profile {
         name = var.iam_ec2_instance_profile.name 
     }
     user_data = base64encode(templatefile(("userdata.sh"), {mysql_url = var.rds_db_endpoint}))

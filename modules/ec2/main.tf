@@ -9,7 +9,7 @@ resource "aws_security_group" "vpc_endpoint_security_group" {
         from_port = 443
         to_port = 443
         protocol = "tcp"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
         description = "allow https traffic from vpc"
     }
 
@@ -39,7 +39,7 @@ resource "aws_vpc_endpoint" "endpoints" {
     vpc_endpoint_type = "Interface"
     service_name = "amazonaws.com.${var.region}.${each.value.name}"
     # add a security group to the vpc endpoint
-    vpc_security_group_ids = [aws_security_group.vpc_endpoint_security_group.id]
+    security_group_ids = [aws_security_group.vpc_endpoint_security_group.id]
 }
 
 # create iam role for ec2 instance
@@ -62,7 +62,7 @@ resource "aws_iam_role" "ec2_role" {
 
 # attach AmazonSSMManagedInstanceCore Policy to the IAM role
 resource "aws_iam_role_policy_attachment" "ec2_role_policy" {
-    policy_arn = "arn:aws:iam:aws:policy/AmazonSSMManagedInstanceCore"
+    policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
     role = aws_iam_role.ec2_role.name
 }
 
