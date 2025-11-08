@@ -1,5 +1,5 @@
-statefile.tf
+
 terraform.tfvars
-userdata.sh
+
 .terraform
 .terraform.lock.hcl
