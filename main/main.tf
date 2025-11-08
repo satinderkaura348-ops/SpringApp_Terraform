@@ -18,13 +18,15 @@ module "vpc" {
 
 # create nat gateway
 module "natgateway" {
-    source = "../modules/natgw"
+    source = "../modules/natgateway"
+    region = module.vpc.region
+    igw = module.vpc.internet_gateway
     public_subnet_az1_id = module.vpc.public_subnet_az1_id
     public_subnet_az2_id = module.vpc.public_subnet_az2_id
     private_subnet_az1_id = module.vpc.private_subnet_az1_id
     private_subnet_az2_id = module.vpc.private_subnet_az2_id
     vpc_id = module.vpc.vpc_id 
-    internet_gateway = module.vpc.internet_gateway
+    
 }
 
 # create security group
@@ -53,6 +55,7 @@ module "ec2" {
 # create rds
 module "rds" {
     source = "../modules/rds"
+    project_name = module.vpc.project_name
     vpc_id = module.vpc.vpc_id 
     alb_security_group_id = module.security_group.alb_security_group_id
     secure_subnet_az1_id = module.vpc.secure_subnet_az1_id 
@@ -66,8 +69,8 @@ module "asg" {
     rds_db_endpoint = module.rds.rds_db_endpoint
     private_subnet_az1_id = module.vpc.private_subnet_az1_id
     private_subnet_az2_id = module.vpc.private_subnet_az2_id
-    application_load_balancer = module.alb.application_load_balancer
-    alb_target_group_arn = module.alb.alb_target_group_arn
+    application_load_balancer = module.application_load_balancer.application_load_balancer
+    alb_target_group_arn = module.application_load_balancer.alb_target_group_arn
     alb_security_group_id = module.security_group.alb_security_group_id
     iam_ec2_instance_profile = module.ec2.iam_ec2_instance_profile
 }

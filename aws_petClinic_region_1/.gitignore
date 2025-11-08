@@ -4,3 +4,5 @@ userdata.sh
 variables.tf 
 security_group_alb.tf 
 backend.tf
+.terraform
+.terraform.lock.hcl
