@@ -55,7 +55,7 @@ resource "aws_security_group" "webSg" {
         from_port = 80
         to_port = 80
         protocol = "tcp"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
     }
 
     ingress {
@@ -63,14 +63,14 @@ resource "aws_security_group" "webSg" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
     }
     
     egress {
         from_port = 0
         to_port = 0
         protocol = "-1"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
     }
 
     tags = {
@@ -179,4 +179,9 @@ resource "aws_subnet" "secure_subnet_az2" {
     tags = {
         Name = "secure subnet az2"
     }
+}
+
+provider "aws" {
+  region  = "ap-southeast-2"  # Sydney
+  profile = "default"         # Optional if you use AWS CLI profile
 }
