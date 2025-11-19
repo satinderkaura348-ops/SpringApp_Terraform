@@ -12,9 +12,13 @@ The infrastructure includes VPCs, EC2 instances, ALBs, RDS databases, S3 buckets
 Project Structure
 
 aws_petClinic_region_1/      # Terraform code for region 1
+
 aws_petClinic_region_2/      # Terraform code for region 2
+
 main/                        # Common/global Terraform configurations
+
 modules/                     # Reusable Terraform modules
+
   ├─ alb/
   ├─ asg/
   ├─ ec2/
@@ -22,6 +26,7 @@ modules/                     # Reusable Terraform modules
   ├─ rds/
   ├─ security_group/
   └─ vpc/
+  
 terraform-app.pn             # Diagram or plan (if applicable)
 README.md
 
@@ -119,3 +124,4 @@ Author
 
 Satinder
 GitHub: @satinderkaura348-ops
+
