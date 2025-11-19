@@ -40,33 +40,43 @@ README.md
 **Key Files**
 
 main.tf
-Main:- entry point for Terraform configurations
+
+Mainentry point for Terraform configurations
 
 variables.tf
+
 Input variables for each environment or region
 
 outputs.tf
+
 Outputs of deployed resources
 
 backend.tf
+
 Terraform remote state configuration
 
 userdata.sh
+
 Script to bootstrap EC2 instances
 
 alb.tf
+
 Application Load Balancer configuration
 
 ec2.tf
+
 EC2 instance definitions
 
 rds.tf
+
 RDS instance configuration
 
 s3.tf
+
 S3 bucket configuration
 
 security_group_alb.tf
+
 Security group rules for ALB
 
 **Modules**
@@ -131,6 +141,7 @@ Always double-check before destroying production resources.
 Satinder
 
 GitHub: @satinderkaura348-ops
+
 
 
 
