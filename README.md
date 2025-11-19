@@ -41,41 +41,23 @@ README.md
 
 main.tf :- Main entry point for Terraform configurations
 
-variables.tf
+variables.tf :- Input variables for each environment or region
 
-Input variables for each environment or region
+outputs.tf :- Outputs of deployed resources
 
-outputs.tf
+backend.tf :- Terraform remote state configuration
 
-Outputs of deployed resources
+userdata.sh :- Script to bootstrap EC2 instances
 
-backend.tf
+alb.tf :- Application Load Balancer configuration
 
-Terraform remote state configuration
+ec2.tf :- EC2 instance definitions
 
-userdata.sh
+rds.tf :- RDS instance configuration
 
-Script to bootstrap EC2 instances
+s3.tf :- S3 bucket configuration
 
-alb.tf
-
-Application Load Balancer configuration
-
-ec2.tf
-
-EC2 instance definitions
-
-rds.tf
-
-RDS instance configuration
-
-s3.tf
-
-S3 bucket configuration
-
-security_group_alb.tf
-
-Security group rules for ALB
+security_group_alb.tf :- Security group rules for ALB
 
 **Modules**
 
@@ -139,6 +121,7 @@ Always double-check before destroying production resources.
 Satinder
 
 GitHub: @satinderkaura348-ops
+
 
 
 
