@@ -12,8 +12,11 @@ The infrastructure includes VPCs, EC2 instances, ALBs, RDS databases, S3 buckets
 **Project Structure**
 
 aws_petClinic_region_1/      # Terraform code for region 1
+
 aws_petClinic_region_2/      # Terraform code for region 2
+
 main/                        # Common/global Terraform configurations
+
 modules/                     # Reusable Terraform modules
 
   ├─ alb/
@@ -128,6 +131,7 @@ Always double-check before destroying production resources.
 Satinder
 
 GitHub: @satinderkaura348-ops
+
 
 
 
