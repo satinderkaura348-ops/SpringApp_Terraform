@@ -41,7 +41,7 @@ README.md
 
 main.tf
 
-Mainentry point for Terraform configurations
+Main entry point for Terraform configurations
 
 variables.tf
 
@@ -141,6 +141,7 @@ Always double-check before destroying production resources.
 Satinder
 
 GitHub: @satinderkaura348-ops
+
 
 
 
