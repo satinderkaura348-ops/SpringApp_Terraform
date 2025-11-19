@@ -3,7 +3,7 @@
 
 ![Terraform App](terraform-app.png)
 
-AWS Pet Clinic Infrastructure
+**AWS Pet Clinic Infrastructure**
 
 This repository contains Terraform code for deploying the Spring Pet Clinic application across multiple AWS regions with high availability, auto-scaling, and fully managed resources.
 
@@ -119,3 +119,4 @@ Author
 
 Satinder
 GitHub: @satinderkaura348-ops
+
