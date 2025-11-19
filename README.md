@@ -39,9 +39,7 @@ README.md
 
 **Key Files**
 
-main.tf
-
-Main entry point for Terraform configurations
+main.tf :- Main entry point for Terraform configurations
 
 variables.tf
 
@@ -141,6 +139,7 @@ Always double-check before destroying production resources.
 Satinder
 
 GitHub: @satinderkaura348-ops
+
 
 
 
