@@ -20,11 +20,17 @@ main/                        # Common/global Terraform configurations
 modules/                     # Reusable Terraform modules
 
   ├─ alb/
+  
   ├─ asg/
+  
   ├─ ec2/
+  
   ├─ natgateway/
+  
   ├─ rds/
+  
   ├─ security_group/
+  
   └─ vpc/
   
 terraform-app.pn             # Diagram or plan (if applicable)
@@ -124,4 +130,5 @@ Author
 
 Satinder
 GitHub: @satinderkaura348-ops
+
 
