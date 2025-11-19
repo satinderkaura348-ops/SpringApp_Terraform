@@ -3,13 +3,13 @@
 
 ![Terraform App](terraform-app.png)
 
-AWS Pet Clinic Infrastructure
+**AWS Pet Clinic Infrastructure**
 
 This repository contains Terraform code for deploying the Spring Pet Clinic application across multiple AWS regions with high availability, auto-scaling, and fully managed resources.
 
 The infrastructure includes VPCs, EC2 instances, ALBs, RDS databases, S3 buckets, and security groups, along with automation scripts for user data.
 
-Project Structure
+**Project Structure**
 
 aws_petClinic_region_1/      # Terraform code for region 1
 aws_petClinic_region_2/      # Terraform code for region 2
@@ -34,7 +34,7 @@ terraform-app.pn             # Diagram or plan (if applicable)
 README.md
 
 
-Key Files
+**Key Files**
 
 main.tf
 Main entry point for Terraform configurations
@@ -66,7 +66,7 @@ S3 bucket configuration
 security_group_alb.tf
 Security group rules for ALB
 
-Modules
+**Modules**
 
 Reusable modules are stored under modules/ for easier maintenance and consistency:
 
@@ -84,7 +84,7 @@ Security Groups: Firewall rules and access control
 
 NAT Gateway: Internet access for private subnets
 
-Deployment Instructions
+**Deployment Instructions**
 
 Make sure Terraform is installed and AWS credentials are configured.
 
@@ -106,7 +106,7 @@ terraform apply
 
 Repeat for aws_petClinic_region_2 if deploying multi-region.
 
-Notes
+**Notes**
 
 EC2 instances are bootstrapped using userdata.sh for automated setup of the Spring Pet Clinic application
 
@@ -114,7 +114,7 @@ Each region maintains isolated resources for high availability and disaster reco
 
 Terraform modules enable code reuse and simplify management across multiple regions
 
-Cleanup
+**Cleanup**
 
 To destroy resources after testing:
 
@@ -123,10 +123,12 @@ terraform destroy
 
 Always double-check before destroying production resources.
 
-Author
+**Author**
 
 Satinder
+
 GitHub: @satinderkaura348-ops
+
 
 
 
