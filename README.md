@@ -84,17 +84,17 @@ Make sure Terraform is installed and AWS credentials are configured.
 Initialize Terraform
 
 cd aws_petClinic_region_1
-terraform init
+```terraform init```
 
 
 Plan deployment
 
-terraform plan
+```terraform plan```
 
 
 Apply infrastructure
 
-terraform apply
+```terraform apply```
 
 
 Repeat for aws_petClinic_region_2 if deploying multi-region.
@@ -111,16 +111,17 @@ Terraform modules enable code reuse and simplify management across multiple regi
 
 To destroy resources after testing:
 
-terraform destroy
+```terraform destroy```
 
 
 Always double-check before destroying production resources.
 
 **Author**
 
-Satinder
+```Satinder
 
-GitHub: @satinderkaura348-ops
+GitHub: @satinderkaura348-ops```
+
 
 
 
