@@ -84,6 +84,7 @@ Make sure Terraform is installed and AWS credentials are configured.
 Initialize Terraform
 
 cd aws_petClinic_region_1
+
 ```terraform init```
 
 
@@ -118,9 +119,11 @@ Always double-check before destroying production resources.
 
 **Author**
 
-```Satinder
+```
+Satinder
+GitHub: @satinderkaura348-ops
+```
 
-GitHub: @satinderkaura348-ops```
 
 
 
