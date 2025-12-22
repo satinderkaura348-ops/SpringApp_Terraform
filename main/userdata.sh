@@ -13,5 +13,5 @@ systemctl enable docker.service --now
 sudo usermod -a -G docker ssm-user
 sudo usermod -a -G docker ec2-user
 systemctl restart docker.service
-docker pull karthik0741/images:petclinic_img
+docker pull satinderkaura348/petapp:latest
 docker run -e MYSQL_URL=jdbc:mysql://${mysql_url}/petclinic -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 80:8080 docker.io/karthik0741/images:petclinic_img
