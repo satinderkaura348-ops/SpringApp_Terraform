@@ -1,7 +1,8 @@
 # SpringApp_Terraform
 
 
-![Terraform App](terraform-app.png)
+<img width="1280" height="720" alt="AWS-Architecture-Icons-Deck_For-Dark-BG_07312025" src="https://github.com/user-attachments/assets/92385708-f277-4ee9-9b4c-e0e8e4bf9e27" />
+
 
 **AWS Pet Clinic Infrastructure**
 
@@ -123,6 +124,7 @@ Always double-check before destroying production resources.
 Satinder
 GitHub: @satinderkaura348-ops
 ```
+
 
 
 
